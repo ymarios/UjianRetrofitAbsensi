@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 call: Call<UserResponse>,
                 response: Response<UserResponse>
             ) {
-                var data = response.body()?.data?.ujianloginabsen
+                var data = response.body()?.data?.tabel
 
                 if(response.isSuccessful){
                     Log.d("data","${data}")
@@ -37,11 +37,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this@MainActivity,"Masukkan Username dan Password", Toast.LENGTH_LONG).show()
                     }else{
 
-                        var currentUser = response.body()?.data?.ujianloginabsen?.get(0)
-                        if(currentUser?.password == et_password.text.toString()){
+                        var getuser = response.body()?.data?.tabel?.get(0)
+                        if(getuser?.password == et_password.text.toString()){
                             Toast.makeText(this@MainActivity,"Login Berhasil", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@MainActivity, MainMenu::class.java)
-                            intent.putExtra("data", currentUser)
+                            intent.putExtra("data", getuser)
                             startActivity(intent)
                         }else{
                             Toast.makeText(this@MainActivity,"Password Salah", Toast.LENGTH_LONG).show()

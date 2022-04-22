@@ -24,11 +24,11 @@ data class UserResponse(
 data class Data(
 
 	@field:SerializedName("ujianloginabsen")
-	val ujianloginabsen: List<UjianloginabsenItem?>? = null
+	val tabel: List<tableItem?>? = null
 ) : Parcelable
 
 @Parcelize
-data class UjianloginabsenItem(
+data class tableItem(
 
 	@field:SerializedName("password")
 	val password: String? = null,
