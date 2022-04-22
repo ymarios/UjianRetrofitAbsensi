@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
                         }
 
                     }
-                }else{
-                    Toast.makeText(this@MainActivity,"username and password can't empty", Toast.LENGTH_LONG).show()
                 }
             }
 
