@@ -16,14 +16,13 @@ class RetrofitConfig {
             .build()
         return okHttpClient
 
-
     }
 
     fun getRetrofitClientInstance(): Retrofit {
-        val gson = GsonBuilder().setLenient().create()
         return Retrofit.Builder()
             .baseUrl("http://192.168.0.114/cicool/")
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .client(getInterceptor())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     }
