@@ -34,18 +34,17 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     Log.d("data","${data}")
                     if (data?.size == 0){
-                        Toast.makeText(this@MainActivity,"Username or Password is doesn't found",
-                            Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity,"Masukkan Username dan Password", Toast.LENGTH_LONG).show()
                     }else{
 
                         var currentUser = response.body()?.data?.ujianloginabsen?.get(0)
                         if(currentUser?.password == et_password.text.toString()){
-                            Toast.makeText(this@MainActivity,"Login Successfull", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity,"Login Berhasil", Toast.LENGTH_SHORT).show()
                             val intent = Intent(this@MainActivity, MainMenu::class.java)
                             intent.putExtra("data", currentUser)
                             startActivity(intent)
                         }else{
-                            Toast.makeText(this@MainActivity,"Incorrect password", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@MainActivity,"Password Salah", Toast.LENGTH_LONG).show()
                         }
 
                     }
