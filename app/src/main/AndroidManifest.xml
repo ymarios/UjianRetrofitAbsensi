@@ -15,7 +15,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UjianRetrofitAbsensi">
+        android:theme="@style/Theme.UjianRetrofitAbsensi"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".History"
+            android:exported="false" />
+        <activity
+            android:name=".Checkin"
+            android:exported="false" />
         <activity
             android:name=".MainMenu"
             android:exported="false" />
